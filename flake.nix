@@ -21,17 +21,6 @@
         unset XDG_CONFIG_HOME
         export XDG_CONFIG_HOME=./config
 
-        # For local development:
-        if [[ ! -d ./dev ]]; then
-          mkdir ./dev
-          unset XDG_CONFIG_DIRS
-          export XDG_CONFIG_DIRS=./dev:$XDG_CONFIG_DIRS
-        else
-          unset XDG_CONFIG_DIRS
-          export XDG_CONFIG_DIRS=./dev:$XDG_CONFIG_HOME
-
-        fi
-
         if [[ -d "/tmp/nvim_share" ]]; then
           export XDG_DATA_HOME=/tmp/nvim_share
         else
